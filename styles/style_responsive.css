@@ -192,4 +192,21 @@
         font-size: 1.5vw;
     }
 
+
+    
+    .main-header-noticias{
+        height: 90vw;
+    }
+    .main-header-noticias .text{
+        font-size: 2vw;
+        width:  82vw;
+    }
+    .main-header-noticias .title{
+        font-size: 4vw;
+    }
+    .main-header-noticias img {
+        height: 35vw;
+        width: 80vw;
+        border-radius: 2vw;
+    }
 }
