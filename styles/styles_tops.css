@@ -1,0 +1,153 @@
+.main-content{
+    margin-top: 100PX;
+}
+.search-box {
+        margin-top: 30PX;
+        width: 95%;
+}
+/* === HEADER PRINCIPAL === */
+.main-header-tops {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 10vw;
+    margin: 0px 0 0 0;
+    color: #ffffff;
+    background-color: rgba(44, 66, 66, 0);
+    border-bottom: 3px solid #ffffff4d;
+}
+.main-header-tops .title{
+    font-size: 2vw;
+    font-weight: bold;
+}
+.main-header-tops .text{
+    font-size: 1vw;
+    background-color: rgba(250, 235, 215, 0);
+    margin: 0 40px;
+    color: #ffffffa4;
+}
+/* === CONTENEDORES GENERALES === */
+
+
+.top-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 40px 0;
+}
+
+/* === TARJETA PRINCIPAL === */
+.top-card {
+    width: 90%;
+    height: 13vw;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.top-card .top-subcard {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 30%, rgba(0, 158, 16, 0.158) 100%);
+    border: 0px solid transparent;
+}
+
+/* === HOVER EFECTO TARJETA === */
+.top-card:hover .top-subcard,
+.top-card:hover img {
+    transition: all 0.3s ease;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #5d5c66ef;
+}
+
+/* === IMAGEN DE LA TARJETA === */
+.top-card img {
+    height: 100%;
+    width: 12vw;
+    object-fit: cover;
+    margin-left: 30px;
+    border-radius: 20px;
+    border: 0px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* === SECCIÓN DE PUNTUACIÓN === */
+.top-card .top-subcard .puntuacion {
+    position: relative;
+    height: 80%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+/* === CÍRCULOS DE PUNTUACIÓN === */
+.puntuacion .circle-1 {
+    height: 98%;
+    width: 98%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.26);
+}
+.circle-1.max{
+    background-color: rgb(0, 255, 21);
+}
+.circle-1.mid{
+    background-color: rgb(238, 255, 0);
+}
+.circle-1.min{
+    background-color: rgb(255, 94, 0);
+}
+
+.puntuacion .circle-2 {
+    height: 92%;
+    width: 92%;
+    border-radius: 50%;
+    background-color: #363B40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.puntuacion .score {
+    font-size: 4vw;
+    color: #ffffff;
+}
+
+/* === CONTENIDO RESTANTE DE LA TARJETA === */
+.top-subcard .content {
+    padding: 10px 10px 0 20px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(188, 143, 143, 0);
+}
+.top-subcard .content .title{   
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.6vw;
+    margin: 10px 0px 0px 0px;
+}
+.top-subcard .content .text{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 5; /* Número de líneas visibles */
+    font-size: 0.9vw;
+    max-height: calc(1.2em * 6); /* Aproximadamente 3 líneas */
+    color: #c4c4c4;
+}

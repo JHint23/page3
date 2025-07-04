@@ -1,0 +1,41 @@
+media/tops/img1.webp
+| 
+Super Mario Odyssey
+| 
+Una obra maestra de Nintendo que redefine el género de plataformas. Acompaña a Mario en una épica aventura a través de múltiples reinos con mundos abiertos, mecánicas innovadoras y un carisma que ha conquistado a jugadores de todas las edades. Su jugabilidad fresca, diseño artístico vibrante y banda sonora inolvidable lo convierten en uno de los títulos más aclamados de todos los tiempos.
+| 
+97
+| 
+https://www.metacritic.com/game/super-mario-odyssey/
+---
+media/tops/img2.webp
+| 
+Astro Bot Rescue Mission
+| 
+Una aventura en plataformas de realidad virtual que combina innovación, encanto y precisión. En este título exclusivo para PS VR2, controlas a un pequeño robot llamado Astro mientras rescatas a tu tripulación a través de mundos creativos, llenos de ingeniosos puzzles, desafíos coreografiados y momentos memorables. Su diseño de niveles, interacción en 3D y narrativa sin complejos lo convierten en una experiencia inmersiva excepcional.
+| 
+95
+| 
+https://www.metacritic.com/game/astro-bot-rescue-mission/
+---
+media/tops/img3.webp
+| 
+Alan Wake II
+| 
+La esperada secuela del thriller psicológico que combina narrativa cinematográfica y suspenso oscuro. En Alan Wake II, los jugadores exploran una historia profunda y retorcida llena de misterio, miedo y acción, ambientada en un mundo sombrío donde la línea entre la realidad y la pesadilla se difumina. Con gráficos mejorados y una atmósfera intensa, este título redefine el género de horror narrativo.
+| 
+87
+| 
+https://www.metacritic.com/game/alan-wake-ii/
+
+---
+media/tops/img4.webp
+| 
+Cyberpunk 2077: Phantom Liberty
+| 
+La única expansión oficial para Cyberpunk 2077, lanzada en septiembre de 2023. En esta intensa aventura de espionaje, encarnas a V en una misión para salvar al presidente en el peligroso distrito Dogtown. Con nuevas mecánicas, decisiones impactantes y una atmósfera de thriller político, Phantom Liberty ofrece una experiencia profunda y emocionante dentro del universo de Night City.
+| 
+89
+| 
+https://www.metacritic.com/game/cyberpunk-2077-phantom-liberty/
+---

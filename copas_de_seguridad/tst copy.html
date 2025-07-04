@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsivo</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: blueviolet;
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body::-webkit-scrollbar {
+            background-color: transparent;
+            width: 5px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: rgba(26, 255, 6, 0.534);
+            border-radius: 10px;
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background: #ffffff;
+        }
+
+        .navbar {
+            height: 60px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            background-color: rgb(201, 185, 48);
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-box {
+            width: 56.61%;
+            height: 47px;
+            margin: 86px auto 0;
+            background-color: blue;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .main-content {
+            background-color: aqua;
+            width: 58.33%;
+            min-height: 100vh;
+            margin: 20px auto;
+            border-radius: 25px;
+            padding: 20px;
+        }
+
+        .footer {
+            height: 100px;
+            background-color: brown;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* --- Responsividad --- */
+        @media (max-width: 768px) {
+            .search-box,
+            .main-content {
+                width: 90%;
+                margin-top: 80px;
+            }
+
+            .navbar {
+                height: 50px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <p>dx</p>
+    </div>
+
+    <div class="search-box">
+        <p>xd</p>
+    </div>
+
+    <div class="main-content">
+        <p>dx</p>
+    </div>
+
+    <div class="footer">
+        <p>dx</p>
+    </div>
+</body>
+</html>

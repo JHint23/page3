@@ -1,0 +1,83 @@
+.recursos-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 40px 0;
+}
+.main-content{
+    margin-top: 100PX;
+}
+.search-box {
+        margin-top: 30PX;
+        width: 95%;
+}
+.recurso-card {
+    background: linear-gradient(90deg,rgba(105, 111, 133, 0.72) 0%, rgba(0, 0, 0, 0) 100%);
+    width: 90%;
+    height: 10vw;
+    min-height: 130px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.recurso-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    
+    border: 2px solid #acacac;
+    cursor: pointer;
+}
+.recurso-card img {
+    height: 80%;
+    width: 250px;
+    object-fit: cover;
+    margin: 0 0 0 20px;
+    border-radius: 10px;
+}
+
+.recurso-card .content {
+    padding: 0px 10px;
+}
+
+.recurso-card .content .title {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0px 0px 0px;
+}
+
+.recurso-card .content .subcontent {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 6;
+    /* Número de líneas visibles */
+    font-size: 1.0vw;
+    max-height: calc(1.2em * 6);
+    /* Aproximadamente 3 líneas */
+    color: #c4c4c4;
+}
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    margin: 20px 0 0 0;
+    font-size: 2vw;
+    font-weight: bold;
+    color: #ffffff;
+    border-bottom: 3px solid #ffffff4d;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pestañas sin JS</title>
+  <style>
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      margin: 0 auto;
+      font-family: sans-serif;
+    }
+
+    .tab-labels {
+      display: flex;
+      cursor: pointer;
+    }
+
+    .tab-labels label {
+      flex: 1;
+      padding: 10px;
+      background: #ddd;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-bottom: none;
+    }
+
+    .tab-content {
+      border: 1px solid #ccc;
+      padding: 20px;
+      background: #fff;
+    }
+
+    /* Ocultar inputs de radio */
+    input[type="radio"] {
+      display: none;
+    }
+
+    /* Mostrar contenido solo si el radio está checked */
+    #tab1:checked ~ .tab-content-container #content1,
+    #tab2:checked ~ .tab-content-container #content2,
+    #tab3:checked ~ .tab-content-container #content3 {
+      display: block;
+    }
+
+    .tab-content-container > div {
+      display: none;
+    }
+
+    /* Estilo para la pestaña activa */
+    #tab1:checked ~ .tab-labels label[for="tab1"],
+    #tab2:checked ~ .tab-labels label[for="tab2"],
+    #tab3:checked ~ .tab-labels label[for="tab3"] {
+      background: #fff;
+      border-bottom: 1px solid #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="tabs">
+  <!-- Radios ocultos para controlar la pestaña activa -->
+  <input type="radio" id="tab1" name="tab-group" checked />
+  <input type="radio" id="tab2" name="tab-group" />
+  <input type="radio" id="tab3" name="tab-group" />
+
+  <!-- Etiquetas que actúan como botones -->
+  <div class="tab-labels">
+    <label for="tab1">Inicio</label>
+    <label for="tab2">Perfil</label>
+    <label for="tab3">Ajustes</label>
+  </div>
+
+  <!-- Contenido de cada pestaña -->
+  <div class="tab-content-container">
+    <div id="content1" class="tab-content">
+      <h3>Inicio</h3>
+      <p>Contenido de la pestaña de inicio.</p>
+    </div>
+    <div id="content2" class="tab-content">
+      <h3>Perfil</h3>
+      <p>Contenido del perfil del usuario.</p>
+    </div>
+    <div id="content3" class="tab-content">
+      <h3>Ajustes</h3>
+      <p>Configuraciones disponibles.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Markdown con secciones colapsables tipo Obsidian</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  #md-input {
+    width: 100%;
+    height: 200px;
+    font-family: monospace;
+    font-size: 16px;
+  }
+  #rendered-content {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  /* Cursor pointer en encabezados */
+  #rendered-content h1,
+  #rendered-content h2,
+  #rendered-content h3,
+  #rendered-content h4,
+  #rendered-content h5,
+  #rendered-content h6 {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+  }
+  /* Indicador de colapsado con pseudo-elemento */
+  #rendered-content h1::after,
+  #rendered-content h2::after,
+  #rendered-content h3::after,
+  #rendered-content h4::after,
+  #rendered-content h5::after,
+  #rendered-content h6::after {
+    content: " ▼";
+    position: absolute;
+    right: 0;
+    font-size: 0.8em;
+    color: #666;
+  }
+  /* Cuando está colapsado, cambia la flecha */
+  #rendered-content h1.collapsed::after,
+  #rendered-content h2.collapsed::after,
+  #rendered-content h3.collapsed::after,
+  #rendered-content h4.collapsed::after,
+  #rendered-content h5.collapsed::after,
+  #rendered-content h6.collapsed::after {
+    content: " ▶";
+  }
+
+  /* Contenido de sección oculto por defecto */
+  .section-content {
+    margin-left: 1em;
+  }
+</style>
+</head>
+<body>
+
+<h2>Editor Markdown con secciones colapsables</h2>
+<textarea id="md-input" placeholder="Escribe aquí en Markdown, usa # para títulos...">
+# Título 1
+
+Este es el contenido de la sección 1.
+
+## Subtítulo 1.1
+
+Contenido del subtítulo 1.1
+
+## Subtítulo 1.2
+
+Contenido del subtítulo 1.2
+
+# Título 2
+
+Contenido de la sección 2.
+</textarea>
+
+<div id="rendered-content"></div>
+
+<!-- markdown-it desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+<script>
+  const md = window.markdownit();
+  const input = document.getElementById('md-input');
+  const output = document.getElementById('rendered-content');
+
+  function makeHeadersCollapsible(container) {
+    // Limpiar colapsos previos si los hubiera
+    container.querySelectorAll('.section-content').forEach(section => {
+      // Mover el contenido de vuelta al DOM principal para resetear
+      while(section.firstChild) {
+        section.parentNode.insertBefore(section.firstChild, section);
+      }
+      section.remove();
+    });
+    container.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(h => {
+      h.classList.remove('collapsed');
+      h.onclick = null;
+    });
+
+    // Agregar contenedores de sección y eventos
+    const headers = container.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headers.forEach(header => {
+      const sectionDiv = document.createElement('div');
+      sectionDiv.classList.add('section-content');
+
+      // Obtener nivel del header actual (1 a 6)
+      const currentLevel = parseInt(header.tagName.charAt(1));
+
+      // Mover contenido hasta el siguiente header del mismo o menor nivel
+      let next = header.nextElementSibling;
+      while(next) {
+        if(next.tagName && /^H[1-6]$/.test(next.tagName)) {
+          const nextLevel = parseInt(next.tagName.charAt(1));
+          if(nextLevel <= currentLevel) break;
+        }
+        const toMove = next;
+        next = next.nextElementSibling;
+        sectionDiv.appendChild(toMove);
+      }
+
+      // Insertar el contenedor después del header
+      header.after(sectionDiv);
+
+      // Ocultar contenido por defecto
+      sectionDiv.style.display = 'none';
+      header.classList.add('collapsed');
+
+      // Evento click para alternar
+      header.onclick = () => {
+        const isCollapsed = sectionDiv.style.display === 'none';
+        sectionDiv.style.display = isCollapsed ? 'block' : 'none';
+        if(isCollapsed) {
+          header.classList.remove('collapsed');
+        } else {
+          header.classList.add('collapsed');
+        }
+      };
+    });
+  }
+
+  function renderMarkdown() {
+    const markdownText = input.value;
+    output.innerHTML = md.render(markdownText);
+    makeHeadersCollapsible(output);
+  }
+
+  input.addEventListener('input', renderMarkdown);
+
+  // Render inicial
+  renderMarkdown();
+</script>
+
+</body>
+</html>
