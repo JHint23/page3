@@ -138,7 +138,7 @@ body {
     top:calc(50% - 20px);
     left: 0;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    color: #7e7e7e;
+    color: #ffffff;
     
 }
 .carrusel .btn-right{
@@ -147,7 +147,7 @@ body {
     top: calc(50% - 20px);
     right: 0;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    color: #7e7e7e;
+    color: #ffffff;
 }
 .carrusel .card{
     height:  30vw;
