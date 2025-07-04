@@ -187,6 +187,9 @@
     .guias-card .desc-card .date{
         font-size: 2vw;
     }
-
+    .carousel-item .card .card-body .card-info .text{
+        color: #ebebeb;
+        font-size: 1.5vw;
+    }
 
 }
