@@ -14,6 +14,7 @@
         width: 95%;
 }
 .recurso-card {
+    text-decoration: none;
     background: linear-gradient(90deg,rgba(105, 111, 133, 0.72) 0%, rgba(0, 0, 0, 0) 100%);
     width: 90%;
     height: 10vw;
