@@ -4,33 +4,27 @@ document.addEventListener("DOMContentLoaded", async () => {
   const searchInput = searchBox.querySelector("input");
   const clearBtn = document.getElementById("clear-search");
 
-  // 🔌 Conexión a Supabase
   const SUPABASE_URL =  'https://jepsuuzybjlsfqgrzeyw.supabase.co';
   const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImplcHN1dXp5Ympsc2ZxZ3J6ZXl3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAxMDQ2NDQsImV4cCI6MjA2NTY4MDY0NH0.t3c3b8UIWRNbSE3tHsMqc1GIN3KwAAuC4daO0eZE2Zg';; // reemplaza con tu key real
   const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-  // 🔍 Filtro de búsqueda
+
   function filtrarTarjetas() {
     const filtro = searchInput.value.toLowerCase();
     const cards = container.querySelectorAll(".analisis-card");
 
     cards.forEach(card => {
-      const texto = (
-        card.querySelector(".title").textContent +
-        " " +
-        card.querySelector(".text").textContent
-      ).toLowerCase();
-
+      const texto = card.querySelector(".title").textContent.toLowerCase();
       card.style.display = texto.includes(filtro) ? "flex" : "none";
     });
 
     searchBox.style.display = "flex";
   }
 
-  // 📥 Cargar desde Supabase
+
   async function cargarAnalisis() {
     const { data, error } = await supabaseClient
-      .from('analisis') // ← Tu tabla
+      .from('analisis')
       .select('*')
       .order('fecha', { ascending: false });
 
@@ -69,7 +63,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     searchBox.style.display = "flex";
   }
 
-  // 🧹 Eventos de búsqueda
+
   searchInput.addEventListener("input", filtrarTarjetas);
 
   clearBtn.addEventListener("click", () => {
@@ -79,6 +73,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     searchBox.style.display = "flex";
   });
 
-  // 🚀 Cargar datos al iniciar
   await cargarAnalisis();
 });
