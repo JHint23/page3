@@ -16,13 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     cards.forEach(card => {
       const texto = card.querySelector(".title").textContent.toLowerCase();
-
-      if (texto.includes(filtro)) {
-        card.style.display = "flex";
-        anyVisible = true;
-      } else {
-        card.style.display = "none";
-      }
+      card.style.display = texto.includes(filtro) ? "flex" : "none";
     });
 
     searchBox.style.display = "flex";
@@ -30,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function cargarGuias() {
     const { data, error } = await supabaseClient
-      .from('guia')  // nombre de tu tabla en Supabase
+      .from('guias')  // nombre de tu tabla en Supabase
       .select('*')
       .order('fecha', { ascending: false });
 
