@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const searchInput = searchBox.querySelector("input");
   const clearBtn = document.getElementById("clear-search");
 
-  // Conexión a Supabase
+
   const SUPABASE_URL =  'https://jepsuuzybjlsfqgrzeyw.supabase.co';
   const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImplcHN1dXp5Ympsc2ZxZ3J6ZXl3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAxMDQ2NDQsImV4cCI6MjA2NTY4MDY0NH0.t3c3b8UIWRNbSE3tHsMqc1GIN3KwAAuC4daO0eZE2Zg';; // reemplaza con tu key real
   const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function cargarGuias() {
     const { data, error } = await supabaseClient
-      .from('guias')  // nombre de tu tabla en Supabase
+      .from('guias')
       .select('*')
       .order('fecha', { ascending: false });
 
@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     searchBox.style.display = "flex";
 
-    // Añadir eventos para búsqueda y limpiar
     searchInput.addEventListener("input", filtrarTarjetas);
     clearBtn.addEventListener("click", () => {
       searchInput.value = "";
